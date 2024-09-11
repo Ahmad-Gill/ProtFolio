@@ -224,10 +224,11 @@ a:hover{
     -webkit-backdrop-filter: saturate(180%) blur(20px);
 }
 
-.theme-text{
+.theme-text {
     background: var(--secondary-gradient-color);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; /* Chrome, Safari */
+    background-clip: text; /* Standard */
+    -webkit-text-fill-color: transparent; /* Ensures text is transparent for gradient */
 }
 
 .section-heading{
@@ -1025,11 +1026,12 @@ a:hover{
 
 .copyright-text .heart-icon {
     background: var(--primary-gradient-color);
-    background-clip: text;
-    -webkit-background-clip: text;
-    text-fill-color: transparent;
-    -webkit-text-fill-color: transparent;
+    background-clip: text; /* Standard */
+    -webkit-background-clip: text; /* Chrome, Safari */
+    -webkit-text-fill-color: transparent; /* Chrome, Safari */
+    color: transparent; /* Fallback for browsers that don't support -webkit-text-fill-color */
 }
+
 
 /*--------- Back To Top ------------*/
 
